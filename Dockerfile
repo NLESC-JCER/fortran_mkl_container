@@ -1,4 +1,4 @@
-from ubuntu:18.04
+From ubuntu:18.04
 
 RUN apt update -y && apt install build-essential gfortran cmake wget  -y
 
