@@ -1,6 +1,6 @@
 from ubuntu:18.04
 
-RUN apt update -y && apt install build-essential gfortran cmake wget  -y
+RUN apt update -y && apt install build-essential gfortran cmake git wget python3  python3-numpy -y
 
 RUN cd /tmp && wget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB \
 	&& apt-key add GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB
@@ -11,3 +11,5 @@ RUN sh -c 'echo deb https://apt.repos.intel.com/mkl all main > /etc/apt/sources.
 RUN apt update
 
 RUN apt install intel-mkl-2019.3-062 -y
+
+CMD source /opt/intel/bin/compilervars.sh intel64 -platform linux
